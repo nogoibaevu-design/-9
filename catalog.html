@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark light">
+  <title>Каталог · Реестр</title>
+  <meta name="description" content="Каталог фильмов: список карточек и подробности в окне. Данные берутся из JSON.">
+  <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600&family=Playfair+Display:ital,wght@0,700;0,900;1,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body id="top">
+  <div class="progress"></div>
+
+  <header class="header">
+    <div class="wrap">
+      <input class="menu-check hidden-input" type="checkbox" id="menu" aria-label="Меню">
+      <a class="logo" href="index.html"><strong>Реестр</strong><small>Оскар</small></a>
+      <nav class="nav">
+        <a href="index.html">Главная</a>
+        <a href="catalog.html" class="active">Каталог</a>
+        <a href="ledger.html">Счёт</a>
+        <a href="ceremony.html">Правила</a>
+        <a href="quiz.html">Викторина</a>
+        <a href="contact.html">Форма</a>
+        <a href="regex.html">Регулярки</a>
+        <a href="about.html">О сайте</a>
+      </nav>
+      <label class="burger" for="menu" title="Меню">☰</label>
+    </div>
+  </header>
+
+  <main>
+    <div class="wrap page">
+      <p class="label">Каталог</p>
+      <h1>Все фильмы списком</h1>
+      <p class="lead">Карточки собираются из файла data/films.json. Нажмите на фильм, чтобы открыть подробности в окне.</p>
+
+      <div class="cat-tools">
+        <input type="search" id="search" placeholder="Поиск по названию или режиссёру" aria-label="Поиск">
+        <span id="count"></span>
+      </div>
+
+      <section id="list-section">
+        <div id="film-grid" class="cat-grid"></div>
+      </section>
+
+    </div>
+  </main>
+
+  <section id="detail-section" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="detail-title">
+    <div class="modal-content">
+      <span id="close-btn" class="close" title="Закрыть">&times;</span>
+      <div id="detail-card"></div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="wrap">
+      <p>Реестр · фильмы с наибольшим числом «Оскаров» · Ногойбаев Умар Алтынбекович</p>
+      <p><a href="#top">Наверх ↑</a></p>
+    </div>
+  </footer>
+  <script src="data/films-data.js"></script>
+  <script src="js/catalog.js"></script>
+</body>
+</html>
